@@ -47,7 +47,7 @@ const Navbar = () => {
                 <Link to="/services" className="nav-link">Services</Link>
               </li>
               <li className="nav-item">
-                <Link to="/learning" className="nav-link">Learning</Link>
+                <Link to="/learning" className="nav-link">Our Learn</Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link">Contact</Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
             <div className="logo-container">
               <div className="logo-icon">
               </div>
-              <span className="logo-text">NETSOL</span>
+              <span className="logo-text">SoftSol</span>
             </div>
           </h5>
           <button type="button" className="btn-close" onClick={closeOffcanvas} aria-label="Close"></button>
@@ -104,7 +104,7 @@ const Navbar = () => {
               <Link to="/services" className="nav-link">Services</Link>
             </li>
             <li className="nav-item">
-              <Link to="/learning" className="nav-link">Learning</Link>
+              <Link to="/learning" className="nav-link">Our Learn</Link>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link">Contact</Link>
@@ -131,17 +131,20 @@ const Wrapper = styled.div`
   }
 
   .navbar-scrolled {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(30, 58, 138, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
   .nav-link {
     color: #fff ;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1rem;
     margin: 0 1rem;
     position: relative;
     transition: color 0.3s;
+  font-family: "DM Sans", sans-serif;
+
   }
 
   .nav-link::after {
@@ -165,13 +168,17 @@ const Wrapper = styled.div`
 
   .language-selector img.flag-icon {
     width: 30px;
-    /* border-radius: 20%; */
+    border-radius: 20%;
   }
 
   .logo-text {
     font-weight: bold;
     font-size: 1.3rem;
     letter-spacing: 1px;
+     font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+
   }
 .navbar-toggler {
     border: 1.5px solid white;
@@ -186,17 +193,21 @@ const Wrapper = styled.div`
   }
 
   .offcanvas .nav-link {
-    color: black;
+    color: black !important;
     padding: 0.75rem;
     transition: all 0.2s;
+  font-family: "DM Sans", sans-serif;
+
   }
 
   .offcanvas .nav-link:hover {
     background: rgba(0, 0, 0, 0.05);
-    color: #f0c040;
+    color: black !important;
   }
 
   .offcanvas-title .logo-text {
     color: black;
+  font-family: "DM Sans", sans-serif;
+
   }
 `;

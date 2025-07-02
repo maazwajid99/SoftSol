@@ -1,71 +1,29 @@
 import BGImage from "../assets/bannerVideoNew.gif";
 import styled from "styled-components";
+
 const HeroSection = () => {
   return (
-    <Wrapper className="hero-section">
-      <div className="hero-background">
-        <div className="hero-overlay"></div>
-      </div>
-      <div className="container pt-5">
-        <div className="paragraph-part row align-items-center justify-content-center">
-          <div className="col-lg-10 col-xl-8">
-            <div className="hero-content text-center">
-              <h1 className="hero-title text-white">
-                Transcend the
-                <br />
-                limits of technology
-              </h1>
-              <p className="hero-subtitle text-white">
-                From AI-powered finance solutions to innovative cloud services.
-              </p>
-              <div className="hero-buttons">
-                <a
-                  href="#why-netsol"
-                  className="btn btn-primary btn-lg me-3 text-white"
-                >
-                  Why NETSOL
-                  <svg
-                    className="ms-2"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M6 12L10 8L6 4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="#contact"
-                  className="btn btn-outline-light btn-lg text-white"
-                >
-                  Let's Talk
-                  <svg
-                    className="ms-2"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M6 12L10 8L6 4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+    <Wrapper>
+      <div className="hero-overlay" />
+      <section className="hero-section d-flex align-items-center justify-content-center text-center">
+        <div className="content container">
+          <h1 className="hero-title">
+            Transcend the <br />
+            limits of technology
+          </h1>
+          <p className="hero-subtitle">
+            From AI-powered finance solutions to innovative cloud services.
+          </p>
+          <div className="hero-buttons">
+            <a href="#why" className="btn btn-primary">
+              Why NETSOL →
+            </a>
+            <a href="#contact" className="btn btn-outline-light">
+              Let's Talk →
+            </a>
           </div>
         </div>
-      </div>
+      </section>
     </Wrapper>
   );
 };
@@ -73,130 +31,99 @@ const HeroSection = () => {
 export default HeroSection;
 const Wrapper = styled.div`
   position: relative;
-  background-image: url(${BGImage}); /* your GIF */
+  background-image: url(${BGImage});
   background-size: cover;
   background-position: center;
   height: 100vh;
-  z-index: 0;
-
-&::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(30, 58, 138, 0.4); /* blue with 40% opacity */
-  z-index: 1;
-}
-
-  .hero-content {
-    position: relative;
-    z-index: 2; /* bring content above overlay */
-  }
-  .paragraph-part {
-    padding-top: 10%;
-  }
-  .hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-  }
-
-  .hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  overflow: hidden;
 
   .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(
       135deg,
-      rgba(26, 54, 93, 0.8) 0%,
+      rgba(26, 54, 93, 0.6) 0%,
       rgba(0, 212, 170, 0.3) 100%
     );
-    z-index: -1;
+    z-index: 1;
   }
 
-  .hero-content {
+  .hero-section {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 0 1rem;
+  }
+
+  .content {
+    z-index: 2;
     color: white;
-    z-index: 1;
-    padding: 2rem 0;
+    padding-top: 4rem;
   }
 
   .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    text-align: center;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    word-break: break-word;
   }
 
   .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--text-light);
-    margin-bottom: 2.5rem;
+    color: #dfe6e9;
+    margin: 1.5rem auto 2rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
   }
 
   .hero-buttons {
     display: flex;
-    gap: 1rem;
+    align-items: center;
     justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
   }
 
   .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--dark-blue);
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    background-color: #30d4c7;
+    border-color: #30d5c8;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 14px 28px;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.3s;
   }
 
   .btn-primary:hover {
     background-color: #00b894;
-    border-color: #00b894;
+    box-shadow: 0 8px 25px rgba(48, 213, 200, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
   }
 
   .btn-outline-light {
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-color: #30d5c8;
     color: white;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 14px 28px;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.3s;
   }
 
   .btn-outline-light:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #30d5c8;
     border-color: white;
     color: white;
     transform: translateY(-2px);
   }
 
-  /* Responsive Design */
+  /* Responsive */
   @media (max-width: 991.98px) {
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 48px;
     }
 
     .hero-subtitle {
@@ -205,32 +132,27 @@ const Wrapper = styled.div`
 
     .hero-buttons {
       flex-direction: column;
-      align-items: center;
     }
 
     .hero-buttons .btn {
       width: 100%;
-      max-width: 250px;
+      max-width: 280px;
     }
   }
 
   @media (max-width: 767.98px) {
     .hero-title {
-      font-size: 2rem;
+      font-size: 36px;
     }
 
-    .hero-content {
-      padding: 1rem 0;
-    }
-
-    .navbar {
-      padding: 0.5rem 0;
+    .content {
+      padding-top: 2rem;
     }
   }
 
   @media (max-width: 575.98px) {
     .hero-title {
-      font-size: 1.75rem;
+      font-size: 28px;
     }
 
     .hero-subtitle {
