@@ -115,7 +115,7 @@ const Wrapper = styled.div`
 
   .btn-outline-light:hover {
     background-color: #30d5c8;
-    border-color: white;
+    border-color:  #30d5c8;
     color: white;
     transform: translateY(-2px);
   }

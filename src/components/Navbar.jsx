@@ -134,7 +134,7 @@ const Wrapper = styled.div`
   }
 
   .navbar-scrolled {
-    background: rgba(30, 58, 138, 0.2);
+    background: linear-gradient(135deg, rgb(31, 122, 193), rgb(14, 57, 91));
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }

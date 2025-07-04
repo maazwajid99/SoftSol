@@ -94,7 +94,7 @@ export default function Footer() {
 }
 const Wrapper = styled.div`
 .custom-footer {
-  background: linear-gradient(to right, #0a0f1d, #0f172a);
+  background: linear-gradient(135deg, rgb(31, 122, 193), rgb(14, 57, 91));
   color: #ffffff;
   padding-top: 4rem;
   padding-bottom: 2rem;

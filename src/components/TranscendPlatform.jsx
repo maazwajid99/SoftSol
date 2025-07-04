@@ -85,4 +85,9 @@ const Wrapper = styled.div`
     font-family: "DM Sans", sans-serif;
     transition: 0.3s;
   }
+  .btn-primary:hover {
+    background-color: #00b894;
+    box-shadow: 0 8px 25px rgba(48, 213, 200, 0.5);
+    transform: translateY(-2px);
+  }
 `;
