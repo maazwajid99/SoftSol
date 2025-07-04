@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vidstack/react": "^0.6.15",
     "bootstrap": "^5.3.7",
     "framer-motion": "^12.23.0",
     "react": "^19.1.0",
