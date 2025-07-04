@@ -149,7 +149,7 @@ const Wrapper = styled.div`
 
   .team-section {
     background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
-    padding-top: 90px !important;
+    padding-top: 60px !important;
   }
 
   .team-heading {
