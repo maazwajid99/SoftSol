@@ -2,7 +2,7 @@ import React from "react";
 import MarketplaceImage from "../assets/Hero2.jpeg"; // ✔️ Check that this file actually exists
 import styled from "styled-components";
 
-export default function MarketplaceHero() {
+export default function Marketplace() {
   return (
     <Wrapper>
       <div className="marketplace-hero position-relative overflow-hidden">
