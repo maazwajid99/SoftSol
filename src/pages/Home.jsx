@@ -3,7 +3,7 @@ import HeroSection from "../components/hero-section";
 import Brand from "../components/Brand";
 import styled from "styled-components";
 import TranscendPlatform from "../components/TranscendPlatform";
-import Marketplacehero from "../components/marketplacehero";
+import MarketplaceHero from "../components/marketplacehero";
 import Comprehensive from "../components/Comprehensive";
 import TeamSection from "../components/TeamSection";
 import ReviewClient from "../components/ReviewsClient";
@@ -15,7 +15,7 @@ function Home() {
     <HeroSection />
     <Brand />
     <TranscendPlatform/>
-    <Marketplacehero />
+    <MarketplaceHero />
     <Comprehensive />
     <TeamSection/>
     <ReviewClient />
