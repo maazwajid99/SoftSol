@@ -5,6 +5,7 @@ import styled from "styled-components";
 import TranscendPlatform from "../components/TranscendPlatform";
 import Marketplace from "../components/Marketplace";
 import Comprehensive from "../components/Comprehensive";
+import AWSPartner from "../components/AWSPartner";
 import TeamSection from "../components/TeamSection";
 import ReviewClient from "../components/ReviewsClient";
 import Footer from "../components/Footer";
@@ -17,6 +18,7 @@ function Home() {
     <TranscendPlatform/>
     <Marketplace />
     <Comprehensive />
+    <AWSPartner />
     <TeamSection/>
     <ReviewClient />
     <Footer/>
