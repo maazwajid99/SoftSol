@@ -11,6 +11,7 @@ import TeamSection from "../components/TeamSection";
 import ReviewClient from "../components/ReviewsClient";
 import Footer from "../components/Footer";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import Newsletters from "../components/NewsLetters";
 function Home() {
   return (
     <Wrapper>
@@ -25,6 +26,7 @@ function Home() {
     <Minecase/>
     <TeamSection/>
     <ReviewClient />
+    <Newsletters />
     <Footer/>
 
 

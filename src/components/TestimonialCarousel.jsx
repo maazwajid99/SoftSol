@@ -1,4 +1,3 @@
-// TestimonialCarousel.jsx
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaPlay } from "react-icons/fa";
@@ -33,9 +32,7 @@ export default function TestimonialCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [currentVideoUrl, setCurrentVideoUrl] = useState("");
 
-  const goToSlide = (index) => {
-    setActiveIndex(index);
-  };
+  const goToSlide = (index) => setActiveIndex(index);
 
   const openModal = (videoUrl) => {
     setCurrentVideoUrl(videoUrl);
@@ -45,11 +42,22 @@ export default function TestimonialCarousel() {
     modal.show();
   };
 
+  // Close modal and reset video URL
   useEffect(() => {
     const modalElement = document.getElementById("videoModal");
     modalElement?.addEventListener("hidden.bs.modal", () => {
       setCurrentVideoUrl("");
     });
+  }, []);
+
+  // Auto change every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -63,14 +71,11 @@ export default function TestimonialCarousel() {
                 index === activeIndex ? "active" : "d-none"
               }`}
             >
-              <div className="row align-items-center min-vh-50">
-                <div className="col-lg-7 col-md-6 pe-lg-5">
+              <div className="row align-items-center">
+                <div className="col-lg-7 col-md-6 col-sm-12 mb-4 mb-md-0 pe-lg-5">
                   <div className="testimonial-content">
                     <blockquote className="mb-4">
-                      <p
-                        className="description"
-                        style={{ fontStyle: "italic" }}
-                      >
+                      <p className="description">
                         "{testimonial.testimonial}"
                       </p>
                     </blockquote>
@@ -80,13 +85,12 @@ export default function TestimonialCarousel() {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-5 col-md-6 text-center">
+                <div className="col-lg-5 col-md-6 col-sm-12 text-center">
                   <div className="testimonial-image-container position-relative d-inline-block">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="img-fluid rounded-3 shadow-lg"
-                      style={{ maxWidth: "400px", width: "100%" }}
                     />
                     {testimonial.hasVideo && (
                       <PlayButton
@@ -101,7 +105,7 @@ export default function TestimonialCarousel() {
             </div>
           ))}
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="carousel-indicators mt-4 d-flex justify-content-center">
             {testimonials.map((_, index) => (
               <Indicator
@@ -156,34 +160,65 @@ const Wrapper = styled.div`
   min-height: 80vh;
   display: flex;
   align-items: center;
+
   .description {
     font-family: "PoppinsRegular", sans-serif;
     font-size: 18px;
     line-height: 32px;
-    text-align: left;
     color: #555;
     font-style: italic;
   }
+
   .title-name {
     color: #010412;
     font-family: "PoppinsSemiBold";
-    font-size: 36px !important;
+    font-size: 32px;
     font-weight: 500;
-    line-height: 43.2px;
-    padding: 0px 0px 10px;
+    margin-bottom: 0.5rem;
   }
+
   .paragraph {
     color: #010412;
     font-family: "PoppinsRegular";
     line-height: 29px;
   }
-  .img-fluid{
-    max-width: 100% !important;
-    height: 63vh;
+
+  .img-fluid {
+    max-width: 100%;
+    height: 63vh; /* Default desktop height */
+    object-fit: cover;
+    border-radius: 12px;
   }
+
+  @media (max-width: 992px) {
+    .img-fluid {
+      height: 50vh;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .img-fluid {
+      height: 40vh;
+    }
+    .testimonial-content {
+      text-align: center;
+    }
+    .title-name {
+      font-size: 24px;
+    }
+    .description {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .img-fluid {
+      height: 35vh;
+    }
+  }
+
   .carousel-item {
     padding: 2rem;
-    border-radius: 15px;
     transition: transform 0.6s ease-in-out;
   }
 
@@ -193,26 +228,8 @@ const Wrapper = styled.div`
     font-style: italic;
   }
 
-  .testimonial-author h3 {
-    font-size: 1.3rem;
-    color: #333;
-  }
-
-  @media (max-width: 768px) {
-    .testimonial-content {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .testimonial-content blockquote p {
-      font-size: 0.9rem;
-    }
-
-    .testimonial-author h3 {
-      font-size: 1.1rem;
-    }
+  .carousel-indicators button {
+    cursor: pointer;
   }
 `;
 
