@@ -6,9 +6,11 @@ import TranscendPlatform from "../components/TranscendPlatform";
 import Marketplace from "../components/Marketplace";
 import Comprehensive from "../components/Comprehensive";
 import AWSPartner from "../components/AWSPartner";
+import Minecase from "../components/Minicase";
 import TeamSection from "../components/TeamSection";
 import ReviewClient from "../components/ReviewsClient";
 import Footer from "../components/Footer";
+import TestimonialCarousel from "../components/TestimonialCarousel";
 function Home() {
   return (
     <Wrapper>
@@ -19,6 +21,8 @@ function Home() {
     <Marketplace />
     <Comprehensive />
     <AWSPartner />
+    <TestimonialCarousel />
+    <Minecase/>
     <TeamSection/>
     <ReviewClient />
     <Footer/>
