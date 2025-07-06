@@ -36,10 +36,9 @@ export default function NewsletterSubscription() {
           </p>
 
           <form onSubmit={handleSubmit}>
-            <div className="input-group flex-column flex-md-row gap-3">
+            <InputWrapper>
               <StyledInput
                 type="email"
-                className="form-control"
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -49,7 +48,7 @@ export default function NewsletterSubscription() {
               <HeroButton type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Subscribing..." : <>Subscribe <span className="ms-2">→</span></>}
               </HeroButton>
-            </div>
+            </InputWrapper>
 
             {message && (
               <div className="mt-3 text-center text-white">{message}</div>
@@ -61,6 +60,7 @@ export default function NewsletterSubscription() {
   );
 }
 
+// STYLES
 const Wrapper = styled.div`
   padding: 4%;
   display: flex;
@@ -74,13 +74,28 @@ const Card = styled.div`
   border: none !important;
 `;
 
+const InputWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
 const StyledInput = styled.input`
+  flex: 1;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
   border-radius: 5px;
   padding: 12px 16px;
   font-size: 16px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HeroButton = styled.button`
@@ -92,6 +107,7 @@ const HeroButton = styled.button`
   font-family: "DM Sans", sans-serif;
   transition: 0.3s;
   color: white;
+  white-space: nowrap;
 
   &:hover {
     background-color: #00b894;
@@ -102,5 +118,9 @@ const HeroButton = styled.button`
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
