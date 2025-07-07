@@ -53,29 +53,12 @@ const Navbar = () => {
                 <Link to="/learning" className="nav-link">Our Learn</Link>
               </li>
               <li className="nav-item">
+                <Link to="/blog" className="nav-link">Blog</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/contact" className="nav-link">Contact</Link>
               </li>
             </ul>
-
-            <div className="navbar-nav">
-              <div className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle language-selector" href="#" role="button" data-bs-toggle="dropdown">
-                  <img src="https://flagcdn.com/w20/us.png" alt="US" className="flag-icon" />
-                </a>
-                <ul className="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <img src="https://flagcdn.com/w20/us.png" alt="US" className="flag-icon me-2" /> English
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      <img src="https://flagcdn.com/w20/es.png" alt="ES" className="flag-icon me-2" /> Español
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           <button className="navbar-toggler d-lg-none" type="button" onClick={toggleOffcanvas} aria-label="Toggle navigation">

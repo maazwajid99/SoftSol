@@ -40,11 +40,10 @@ const Wrapper = styled.div`
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(26, 54, 93, 0.6) 0%,
-      rgba(0, 212, 170, 0.3) 100%
-    );
+    /* background: linear-gradient(135deg, #083553, #0c4a6e); */
+    background: linear-gradient(135deg, rgba(8, 53, 83, 1), rgba(12, 74, 110, 1), rgba(3, 115, 170, 1));
+    opacity: 0.6;
+
     z-index: 1;
   }
 
