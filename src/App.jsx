@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Learning from "./pages/Learning";
 import OurTeam from "./pages/OurTeam";
 import Blog from "./pages/Blog";
+import Blog1 from "./BlogContent/Blog1";  
 function App() {
   return (
 
@@ -24,7 +25,8 @@ function App() {
         <Route path="/ourteam" element={<OurTeam />} />
         <Route path="/blog" element={<Blog />} />
 
-
+        {/* Blog Page Routing */}
+        <Route path="/blog/:id" element={<Blog1 />} />
       </Routes>
     </Router>
     </Wrapper>

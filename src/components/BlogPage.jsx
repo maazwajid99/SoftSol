@@ -142,7 +142,7 @@ export default function BlogParent() {
               <i className="fas fa-search search-icon"></i>
               <input
                 type="text"
-                placeholder="Search Blog by title..."
+                placeholder="Search Blog By Title..."
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -156,7 +156,7 @@ export default function BlogParent() {
         <div className="row blog-parent-div">
           {currentPosts.map((post) => (
             <div key={post.id} className="col-md-4 mb-4 pt-4">
-              <Link to={`/project/${post.id}`} className="text-decoration-none">
+              <Link to={`/blog/${post.id}`} className="text-decoration-none">
                 <div className="blog-parent-card h-100 shadow-sm">
                   <img
                     src={post.imageUrl}
@@ -206,9 +206,10 @@ export default function BlogParent() {
 }
 
 // Styled Components
+// Styled Components
 const Wrapper = styled.div`
   .blog-parent-container {
-    padding-top: 8% !important; /* Fixed navbar space */
+    padding-top: 8% !important;
   }
 
   @media (max-width: 992px) {
@@ -230,10 +231,10 @@ const Wrapper = styled.div`
   }
 
   .blog-parent-title-head {
-    color: #1e3a8a;
-    font-family: "Open Sans", sans-serif;
-    font-size: 32px;
-    font-weight: 600;
+    color: #010412;
+    font-family: "PoppinsBold", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
   }
 
   .blog-parent-div {
@@ -241,33 +242,37 @@ const Wrapper = styled.div`
   }
 
   .blog-parent-title {
-    color: #1f2937;
-    font-family: "Open Sans", sans-serif;
-    font-size: 21px;
+    color: #010412;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
     font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
   .blog-parent-paragraph {
-    color: #6b7280;
-    font-family: "Open Sans", sans-serif;
-    font-size: 17px;
+    color: #4b5563;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 1rem;
   }
 
   .blog-parent-date-text {
-    color: #9ca3af;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    color: #6b7280;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
   }
 
   .blog-parent-card {
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
   }
 
   .blog-parent-card:hover {
-    transform: scale(1.03) translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(48, 213, 200, 0.3);
   }
 
   .blog-parent-card img {
@@ -275,7 +280,23 @@ const Wrapper = styled.div`
   }
 
   .blog-parent-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+  }
+
+  .btn-info {
+    background-color: #30d4c7;
+    border-color: #30d4c7;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .btn-info:hover {
+    background-color: #00b894;
+    box-shadow: 0 8px 25px rgba(48, 213, 200, 0.5);
+    transform: translateY(-2px);
   }
 `;
 
@@ -288,12 +309,12 @@ const SearchBox = styled.div`
     padding: 14px 50px 14px 48px;
     border: none;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
-    color: #111827;
+    color: #010412;
     font-size: 16px;
-    font-family: "Open Sans", sans-serif;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: 0.3s ease;
     outline: none;
 
@@ -303,8 +324,8 @@ const SearchBox = styled.div`
     }
 
     &:focus {
-      background: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
   }
 

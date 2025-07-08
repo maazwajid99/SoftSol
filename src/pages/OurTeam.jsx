@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "../components/Navbar";
+import NavbarTwo from "../components/NavbarTwo";
 import Footer from "../components/Footer";
 import TeamSection from "../components/TeamSection";
 const OurTeam = () => {
@@ -8,7 +8,8 @@ const OurTeam = () => {
 
   return (
     <Wrapper>
-    <Navbar/>
+    <NavbarTwo/>
+     <div className="pt-5"></div>
       <TeamSection/>
       <Footer />
     </Wrapper>

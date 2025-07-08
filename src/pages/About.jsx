@@ -1,11 +1,12 @@
-import Navbar from "../components/Navbar";
+import NavbarTwo from "../components/NavbarTwo";
 import Footer from "../components/Footer";
 import Styled from "styled-components";
 
 function About() {
   return (
   <Wrapper>
-    <Navbar />
+      <NavbarTwo/>
+     <div className="pt-5"></div>
   <h2 className="title">Welcome to About Page</h2>
   <Footer/>
   </Wrapper> 

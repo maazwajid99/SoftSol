@@ -1,25 +1,20 @@
-import Navbar from "../components/Navbar";
+import NavbarTwo from "../components/NavbarTwo";
 import Footer from "../components/Footer";
 import Styled from "styled-components";
+import ContactPaGe from '../components/ContactPage';
 
 
 
 function Contact() {
   return (
   <Wrapper>
-    <Navbar />
-  <h2 className="title">Welcome to Contact Page</h2>
+    <NavbarTwo />
+    <ContactPaGe />
   <Footer/>
   </Wrapper> 
 )
 }
 export default Contact;
 const Wrapper = Styled.div`
-  .title {
-    text-align: center;
-    padding: 80px 0;
-    font-size: 2rem;
-    color: #333;
-    background-color: #f0f0f0;
-  }
+ 
 `;

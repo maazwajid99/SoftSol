@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       {/* Always apply navbar-scrolled styling */}
-      <nav className="navbar navbar-expand-lg fixed-top navbar-scrolled">
+      <nav className="navbar navbar-expand-lg  fixed-top navbar-scrolled">
         <div className="container">
           <Link className="navbar-brand" to="/">
             <div className="logo-container">
@@ -30,7 +30,7 @@ const Navbar = () => {
               <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
               <li className="nav-item"><Link to="/about" className="nav-link">About Us</Link></li>
               <li className="nav-item"><Link to="/services" className="nav-link">Services</Link></li>
-              <li className="nav-item"><Link to="/ourteam" className="nav-link">Our Team</Link></li>
+              {/* <li className="nav-item"><Link to="/ourteam" className="nav-link">Our Team</Link></li> */}
               <li className="nav-item"><Link to="/learning" className="nav-link">Our Learn</Link></li>
               <li className="nav-item"><Link to="/blog" className="nav-link">Blog</Link></li>
               <li className="nav-item"><Link to="/contact" className="nav-link">Contact</Link></li>

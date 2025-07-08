@@ -70,7 +70,7 @@ const TeamSection = () => {
         <div className="container">
           <div className="row mb-5">
             <div className="col-12 text-center">
-              <h1 className="team-heading">Meet The Team</h1>
+              <h1 className="team-heading">Meet our experts</h1>
             </div>
           </div>
 
